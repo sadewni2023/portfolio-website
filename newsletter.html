@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Newsletter | Sadewni Mendis</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="nav-container">
+      <h2 class="logo"><span class="first-letter">S</span>adewni<span>.</span></h2>
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="menu-icon"><i class="fa-solid fa-bars"></i></label>
+      <nav>
+        <a href="index.html">About</a>
+        <a href="blogs.html">Blogs</a>
+        <a href="newsletter.html" class="active">Newsletter</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <a href="index.html#contact" class="btn talk-btn">Let's Talk</a>
+    </div>
+  </header>
+
+  <!-- ===== Newsletter Form ===== -->
+  <main class="newsletter-section">
+    <section class="form-container">
+      <h1>Join My Newsletter</h1>
+      <p>Stay updated with my latest blog posts, projects, and coding tips. Fill out the form below to subscribe.</p>
+
+      <form action="#" method="post" class="newsletter-form" id="newsletterForm">
+        <div class="form-group">
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required 
+                 pattern="[A-Za-z ]{2,}" title="Please enter at least 2 characters">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number (optional):</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+        </div>
+
+        <div class="form-group">
+          <label for="website">Your Website (optional):</label>
+          <input type="url" id="website" name="website" placeholder="https://example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="topic">Interested Topics:</label>
+          <select id="topic" name="topic">
+            <option value="">Select a topic</option>
+            <option value="frontend">Frontend Development</option>
+            <option value="backend">Backend Development</option>
+            <option value="fullstack">Full Stack Development</option>
+            <option value="design">UI/UX Design</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="frequency">Newsletter Frequency:</label>
+          <div class="radio-group">
+            <label><input type="radio" name="frequency" value="weekly"> Weekly</label>
+            <label><input type="radio" name="frequency" value="monthly"> Monthly</label>
+            <label><input type="radio" name="frequency" value="quarterly"> Quarterly</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message (optional):</label>
+          <textarea id="message" name="message" rows="4" placeholder="Your message here..."></textarea>
+        </div>
+
+        <div class="form-group checkbox-group">
+          <label>
+            <input type="checkbox" name="agree" required>
+            I agree to receive newsletter emails
+          </label>
+        </div>
+
+        <button type="submit" class="btn primary">Subscribe Now</button>
+      </form>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <p class="footer-text">© 2025 Sadewni Mendis. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for subscribing to our newsletter!');
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blogs | Sadewni Mendis</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <h2 class="logo"><span class="first-letter">S</span>adewni<span>.</span></h2>
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="menu-icon"><i class="fa-solid fa-bars"></i></label>
+      <nav>
+        <a href="index.html">About</a>
+        <a href="blogs.html" class="active">Blogs</a>
+        <a href="newsletter.html">Newsletter</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <a href="index.html#contact" class="btn talk-btn">Let's Talk</a>
+    </div>
+  </header>
+
+  <!-- ===== Blog Section ===== -->
+  <main class="blog-section">
+    <section class="intro">
+      <h1>My Blog Posts</h1>
+      <p>Here are some thoughts and updates on my learning journey in web development.</p>
+    </section>
+
+    <section class="blogs-container">
+      <article class="blog-post">
+        <h2>Exploring Modern Frontend Tools</h2>
+        <time datetime="2025-10-15">October 15, 2025</time>
+        <p>Frontend development is constantly evolving. I've recently explored tools like React, Vite, and Tailwind CSS. These tools help developers create responsive, efficient, and elegant user interfaces faster than ever.</p>
+        <p class="read-more-content">In this deep dive, I explored how Vite's build tools significantly improve development experience with hot module replacement. React's component-based architecture combined with Tailwind's utility-first approach creates a powerful development workflow.</p>
+        <a href="#" class="btn secondary read-more">Read More</a>
+      </article>
+
+      <article class="blog-post">
+        <h2>Responsive Design Matters</h2>
+        <time datetime="2025-09-25">September 25, 2025</time>
+        <p>Designing for all devices is crucial in modern web development. I learned to use CSS media queries effectively to create layouts that look great on both mobile and desktop screens.</p>
+        <p class="read-more-content">Mobile-first design isn't just a trend - it's a necessity. With over 60% of web traffic coming from mobile devices, implementing responsive design using flexbox, grid, and media queries has become essential for modern web developers.</p>
+        <a href="#" class="btn secondary read-more">Read More</a>
+      </article>
+
+      <article class="blog-post">
+        <h2>CSS Grid vs Flexbox</h2>
+        <time datetime="2025-08-10">August 10, 2025</time>
+        <p>Understanding when to use CSS Grid versus Flexbox can significantly improve your layout skills. Both have their strengths in different scenarios.</p>
+        <p class="read-more-content">Grid is perfect for two-dimensional layouts where you need control over both rows and columns. Flexbox excels in one-dimensional layouts. Mastering both gives you complete control over modern web layouts.</p>
+        <a href="#" class="btn secondary read-more">Read More</a>
+      </article>
+    </section>
+  </main>
+  
+  <footer id="contact">
+    <p class="footer-text">© 2025 Sadewni Mendis. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Read More functionality
+    document.querySelectorAll('.read-more').forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        const content = this.previousElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        this.textContent = content.style.display === 'block' ? 'Read Less' : 'Read More';
+      });
+    });
+  </script>
+
+</body>
+</html>
