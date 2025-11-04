@@ -170,8 +170,8 @@ nav a.active::after {
   color: #fff;
 }
 
-.social-icons a[title="Twitter"]:hover {
-  background: #1da1f2;
+.social-icons a[title="GitHub"]:hover {
+  background: #080808;
   color: #fff;
 }
 
@@ -639,3 +639,4 @@ nav a.active::after {
     flex-direction: column;
   }
 }
+
