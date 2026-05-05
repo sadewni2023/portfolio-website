@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+    :root {
+        --background: 222, 47%, 11%;
+        --foreground: 210, 40%, 98%;
+
+        --primary: 217, 91%, 60%;
+        --primary-foreground: 222, 47%, 11%;
+
+        --secondary: 217, 33%, 17%;
+        --secondary-foreground: 210, 40%, 98%;
+
+        --accent: 199, 89%, 48%;
+        --accent-foreground: 222, 47%, 11%;
+
+        --muted: 217, 33%, 17%;
+        --muted-foreground: 215, 20.2%, 65.1%;
+
+        --card: 222, 47%, 11%;
+        --card-foreground: 210, 40%, 98%;
+
+        --popover: 222, 47%, 11%;
+        --popover-foreground: 210, 40%, 98%;
+
+        --border: 217, 33%, 17%;
+        --input: 217, 33%, 17%;
+        --ring: 217, 91%, 60%;
+
+        --radius: 1rem;
+
+        /* Skill Category Colors */
+        --skill-lang: 262, 80%, 65%;
+        --skill-back: 142, 70%, 45%;
+        --skill-front: 199, 89%, 48%;
+        --skill-data: 35, 90%, 55%;
+        --skill-ui: 330, 80%, 60%;
+        --skill-tools: 15, 80%, 55%;
+        --skill-soft: 280, 70%, 60%;
+
+        /* Achievement Colors */
+        --gold: 43, 74%, 49%;
+        --silver: 0, 0%, 75%;
+        --bronze: 30, 46%, 45%;
+    }
+
+    .dark {
+        --background: 222, 47%, 11%;
+        --foreground: 210, 40%, 98%;
+        --primary: 217, 91%, 60%;
+        --primary-foreground: 222, 47%, 11%;
+        --secondary: 217, 33%, 17%;
+        --secondary-foreground: 210, 40%, 98%;
+        --accent: 199, 89%, 48%;
+        --accent-foreground: 222, 47%, 11%;
+        --muted: 217, 33%, 17%;
+        --muted-foreground: 215, 20.2%, 65.1%;
+        --card: 222, 47%, 11%;
+        --card-foreground: 210, 40%, 98%;
+        --popover: 222, 47%, 11%;
+        --popover-foreground: 210, 40%, 98%;
+        --border: 217, 33%, 17%;
+        --input: 217, 33%, 17%;
+        --ring: 217, 91%, 60%;
+    }
+
+    * {
+        border-color: hsl(var(--border));
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "Outfit", sans-serif;
+        background-color: hsl(var(--background));
+        color: hsl(var(--foreground));
+        overflow-x: hidden;
+        line-height: 1.625;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        text-wrap: balance;
+        letter-spacing: -0.02em;
+    }
+
+    /* Video Background Base */
+    .video-bg-container {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        overflow: hidden;
+    }
+
+    .video-bg-container video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.2;
+        filter: brightness(0.6) contrast(1.1);
+    }
+
+    .video-bg-container::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            rgba(18, 16, 16, 0) 50%,
+            rgba(0, 0, 0, 0.1) 50%
+        ), linear-gradient(
+            90deg,
+            rgba(0, 255, 0, 0.005),
+            rgba(0, 255, 0, 0.01),
+            rgba(0, 255, 0, 0.005)
+        );
+        background-size: 100% 4px, 4px 100%;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.3;
+    }
+}
+
+@layer utilities {
+    .glassmorphism {
+        background-color: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+    }
+
+    .text-gradient {
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-image: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--primary)));
+        background-size: 200% auto;
+        animation: gradient 8s linear infinite;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animate-gradient {
+    animation: gradient 8s linear infinite;
+}
