@@ -4,6 +4,37 @@ import { Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 function HeroSection() {
+    const roles = ['Full-Stack Developer', 'Software Engineer', 'UI/UX Designer'];
+    const [currentRoleIndex, setCurrentRoleIndex] = React.useState(0);
+    const [displayedText, setDisplayedText] = React.useState('');
+    const [isDeleting, setIsDeleting] = React.useState(false);
+
+    React.useEffect(() => {
+        let timer;
+        const currentRole = roles[currentRoleIndex];
+        
+        // Typing speed or Deleting speed
+        const speed = isDeleting ? 30 : 60;
+
+        if (!isDeleting && displayedText === currentRole) {
+            // Wait 2 seconds before starting to delete
+            timer = setTimeout(() => setIsDeleting(true), 2000);
+        } else if (isDeleting && displayedText === '') {
+            setIsDeleting(false);
+            setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
+        } else {
+            timer = setTimeout(() => {
+                setDisplayedText(prev => 
+                    isDeleting 
+                        ? currentRole.substring(0, prev.length - 1)
+                        : currentRole.substring(0, prev.length + 1)
+                );
+            }, speed);
+        }
+
+        return () => clearTimeout(timer);
+    }, [displayedText, isDeleting, currentRoleIndex]);
+
     const handleDownloadCV = () => {
         const link = document.createElement('a');
         link.href = '#';
@@ -58,8 +89,11 @@ function HeroSection() {
                             <span className="text-gradient">Sadewni Mendis</span>
                         </h1>
 
-                        <h2 className="text-2xl md:text-3xl font-bold text-foreground/90 mb-8 leading-tight">
-                            Full-Stack Developer & Computer Science Graduate
+                        <h2 className="text-2xl md:text-3xl font-bold text-foreground/90 mb-8 leading-tight min-h-[40px] flex items-center justify-center lg:justify-start">
+                            <span className="text-gradient min-w-[200px]">
+                                {displayedText}
+                            </span>
+                            <span className="w-[3px] h-[30px] bg-accent ml-2 animate-pulse inline-block align-middle"></span>
                         </h2>
 
                         <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-10">
