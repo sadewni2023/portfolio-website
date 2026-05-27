@@ -73,7 +73,7 @@ function AboutPage() {
                                     </h2>
                                     <div className="space-y-4 text-base leading-relaxed text-muted-foreground">
                                         <p>
-                                            I'm a full-stack developer and recent Computer Science graduate from the University of Westminster,
+                                            I'm a full-stack developer and recent Computer Science undergraduate from the University of Westminster,
                                             passionate about creating innovative digital solutions that make a real impact.
                                         </p>
                                         <p>
